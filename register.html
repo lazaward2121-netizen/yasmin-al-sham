@@ -1,19 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>إنشاء حساب - ياسمين الشام</title>
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #101522;
+  background: linear-gradient(160deg,#210b3d,#6732a0);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px 0;
 }
 .container {
   width: 85%;
@@ -24,7 +27,8 @@ body {
   text-align: center;
 }
 h1 { color: #e8c477; }
-input, button {
+
+input, select, button {
   box-sizing: border-box;
   width: 100%;
   padding: 14px;
@@ -32,35 +36,66 @@ input, button {
   border-radius: 10px;
   font-size: 16px;
 }
-input {
+input, select {
   background: #101522;
   border: 1px solid #536078;
   color: white;
 }
 button {
-  background: #218b50;
-  color: white;
+  background: #e8c46d;
+  color: #210b3d;
   border: none;
   font-weight: bold;
+  cursor: pointer;
 }
 a { color: #e8c477; }
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <h1>🌹 ياسمين الشام</h1>
 <h3>إنشاء حساب جديد</h3>
 
 <form>
+
 <input type="text" placeholder="الاسم الكامل" required>
+
+<select id="country">
+<option value="+963">سوريا +963</option>
+<option value="+49">ألمانيا +49</option>
+<option value="+966">السعودية +966</option>
+<option value="+971">الإمارات +971</option>
+<option value="+90">تركيا +90</option>
+<option value="+962">الأردن +962</option>
+<option value="+961">لبنان +961</option>
+<option value="+20">مصر +20</option>
+</select>
+
 <input type="tel" placeholder="رقم الهاتف" required>
+
+<button type="button">إرسال رمز التحقق SMS</button>
+
+<input type="text" placeholder="رمز التحقق">
+
 <input type="email" placeholder="البريد الإلكتروني">
+
 <input type="password" placeholder="كلمة المرور" required>
+
+<input type="password" placeholder="تأكيد كلمة المرور" required>
+
 <button type="submit">إنشاء حساب</button>
+
 </form>
 
 <p>لديك حساب بالفعل؟</p>
+
 <a href="login.html">تسجيل الدخول</a>
+
+<p>❤️ أهلاً بك في عائلة ياسمين الشام</p>
+
 </div>
 </body>
 </html>
