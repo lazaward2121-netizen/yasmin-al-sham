@@ -73,6 +73,25 @@ button {
 إنشاء حساب جديد
 </a>
 </p>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCVhMGslHnQ81vwiHuTmmSukxsLJ_gQfhI",
+  authDomain: "yasmin-al-sham.firebaseapp.com",
+  projectId: "yasmin-al-sham",
+  storageBucket: "yasmin-al-sham.firebasestorage.app",
+  messagingSenderId: "10030991532",
+  appId: "1:10030991532:web:0295b05dc1d11de4fcb709"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.firebaseAuth = auth;
+
+console.log("YASMIN AL SHAM Firebase Connected");
+</script>
 </body>
 </html>
