@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تسجيل الدخول - ياسمين الشام</title>
+
 <style>
 body {
   background: linear-gradient(160deg,#210b3d,#6732a0);
@@ -13,7 +15,8 @@ body {
   padding: 30px 15px;
 }
 h1 { color: #f4d47b; }
-input {
+
+input, select {
   display: block;
   width: 85%;
   padding: 14px;
@@ -21,7 +24,9 @@ input {
   border: 0;
   border-radius: 12px;
   font-size: 16px;
+  box-sizing: border-box;
 }
+
 button {
   background: #e8c46d;
   border: 0;
@@ -32,26 +37,42 @@ button {
 }
 </style>
 </head>
+
 <body>
+
 <h1>🌹 ياسمين الشام</h1>
 <h2>تسجيل الدخول</h2>
-select id country
-  option value يساوي +963 سوريا +963
+
+<select id="country">
+  <option value="+963">سوريا +963</option>
+  <option value="+49">ألمانيا +49</option>
+  <option value="+966">السعودية +966</option>
+  <option value="+971">الإمارات +971</option>
+  <option value="+90">تركيا +90</option>
+  <option value="+962">الأردن +962</option>
+  <option value="+961">لبنان +961</option>
+  <option value="+20">مصر +20</option>
+</select>
+
 <input type="tel" placeholder="رقم الهاتف">
+
 <input type="password" placeholder="كلمة المرور">
 
 <button>دخول</button>
 
 <p>أو سجل الدخول باستخدام</p>
+
 <button>Google</button>
 <button>Facebook</button>
 
 <p>أهلاً بك في عائلتنا ❤️</p>
-<p style="text-align:center; color:white;">
+
+<p>
 ليس لديك حساب؟
 <a href="register.html" style="color:#e8c477;">
 إنشاء حساب جديد
 </a>
 </p>
+
 </body>
 </html>
