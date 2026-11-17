@@ -91,8 +91,7 @@ from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect,
-  getRedirectResult,
+  signInWithPopup,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 
@@ -116,24 +115,17 @@ googleButton.addEventListener("click", async () => {
   try {
     googleButton.disabled = true;
     message.textContent = "جارٍ تحويلك إلى Google...";
-    await signInWithRedirect(auth, provider);
+const result = await signInWithPopup(auth, provider);
+if (result.user) {
+  window.location.replace("home.html");
+}
   } catch (error) {
     googleButton.disabled = false;
-    message.textContent = "تعذر تسجيل الدخول: " + error.message;
-  }
-});
-
-try {
-  const result = await getRedirectResult(auth);
-
-  if (result?.user) {
-    window.location.replace("home.html");
-  }
-} catch (error) {
   message.textContent = "رمز الخطأ: " + error.code +
 " | التفاصيل: " + error.message;
 console.error(error);
-}
+  }
+});
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
