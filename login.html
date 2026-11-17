@@ -130,7 +130,9 @@ try {
     window.location.replace("home.html");
   }
 } catch (error) {
-  message.textContent = "خطأ في تسجيل الدخول: " + error.message;
+  message.textContent = "رمز الخطأ: " + error.code +
+" | التفاصيل: " + error.message;
+console.error(error);
 }
 
 onAuthStateChanged(auth, (user) => {
