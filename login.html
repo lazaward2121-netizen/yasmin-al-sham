@@ -85,7 +85,6 @@ a { color: #e8c477; }
 </p>
 
 <script type="module">
-
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
 
@@ -93,7 +92,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
-  getRedirectResult
+  getRedirectResult,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -116,9 +116,7 @@ googleButton.addEventListener("click", async () => {
   try {
     googleButton.disabled = true;
     message.textContent = "جارٍ تحويلك إلى Google...";
-
     await signInWithRedirect(auth, provider);
-
   } catch (error) {
     googleButton.disabled = false;
     message.textContent = "تعذر تسجيل الدخول: " + error.message;
@@ -128,20 +126,22 @@ googleButton.addEventListener("click", async () => {
 try {
   const result = await getRedirectResult(auth);
 
-  if (result && result.user) {
-    message.textContent = "مرحباً بك في ياسمين الشام ❤️";
-
+  if (result?.user) {
     window.location.replace("home.html");
   }
 } catch (error) {
-  message.textContent =
-    "تعذر إكمال تسجيل الدخول: " + error.message;
+  message.textContent = "خطأ في تسجيل الدخول: " + error.message;
 }
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.replace("home.html");
+  }
+});
 
 document.getElementById("facebookLogin").addEventListener("click", () => {
   message.textContent = "تسجيل Facebook سيكون متاحاً لاحقاً.";
 });
-
 </script>
 
 </body>
